@@ -1,9 +1,4 @@
-<?php
-  session_start();
-
-  header("Location: index.php?login=erro");
-  echo $_SESSION['autenticado'];
-?>
+<?php require_once'validador_acesso.php'; ?>
 
 <html>
   <head>
@@ -22,14 +17,7 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        App Help Desk
-      </a>
-    </nav>
-
+    <?php include 'navbar.php'; ?>
     <div class="container">    
       <div class="row">
 
@@ -66,7 +54,7 @@
 
                     <div class="row mt-5">
                       <div class="col-6">
-                        <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                        <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
                       </div>
 
                       <div class="col-6">

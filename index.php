@@ -16,12 +16,7 @@
       </style>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        App Help Desk
-      </a>
-    </nav>
+    <?php include 'navbar.php'; ?>
 
     <div class="container">    
       <div class="row">
@@ -34,18 +29,18 @@
             <div class="card-body">
               <form id="formLogin" method="post" action="valida_login.php">
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input name="email" type="email" class="form-control" placeholder="E-mail" required>
                 </div>
                 <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Senha">
+                  <input name="senha" type="password" class="form-control" placeholder="Senha" required>
                 </div>
-                <?php if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
-                  <div class="text-danget">
+                <?php if(isset($_POST['email']) && $_POST['senha'] == 'erro') { ?>
+                  <div class="text-danger">
                     Usuário ou senha icorreto
                   </div>
                 <?php } ?>
-                <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
-                  <div class="text-danget">
+                <?php if(isset($_POST['email']) && $_POST['senha'] == 'erro2') { ?>
+                  <div class="text-danger">
                     Login necessario
                   </div>
                 <?php } ?>   
