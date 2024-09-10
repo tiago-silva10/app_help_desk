@@ -1,10 +1,11 @@
 <?php
+    //$session_start();
 
     $titulo = $_POST['titulo'];
     $categoria = $_POST['categoria'];
     $descricao = $_POST['descricao'];
 
-    $resultado = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
+    $resultado = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 
     $arquivo = fopen('arquivo.hd', 'a');
 
